@@ -57,7 +57,6 @@ const HooksUseReducer = () => {
         <h1>useReducer inserindo na lista</h1>
         <p>Lista de atividade:</p>
         <div>
-            <h1>aqui</h1>
         {tasks.map((t)=>
         <ul><li key={t.id} onDoubleClick={()=> removeTask(t.id)}>{t.text}</li></ul>
         )}

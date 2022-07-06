@@ -6,8 +6,9 @@ export default function Home() {
     <div className={styles.container}>
      <h1>Next JS</h1>
      <ul>
-      <li><Link href="/contato"><a>Contato</a></Link></li>
+      <li><Link href="/conceitos"><a>Conceitos</a></Link></li>
       <li><Link href="/about"><a>Sobre nós</a></Link></li>
+      <li><Link href="/hooks">Hooks</Link></li>
      </ul> 
     </div>
   )
