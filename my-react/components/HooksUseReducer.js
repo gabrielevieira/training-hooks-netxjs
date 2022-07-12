@@ -24,7 +24,7 @@ const HooksUseReducer = () => {
                 return [...state, newTask]
 
                 case "DELETE":
-                    return state.find((task) => task.id !== action.id)
+                    return state.filter((task) => task.id !== action.id)
         
              default:
                  return state
@@ -34,7 +34,6 @@ const HooksUseReducer = () => {
 
     const handleChangeTask = (e) => {
         e.preventDefault()
-
         dispatchTask({type: "ADD"})
 
     }
@@ -57,9 +56,10 @@ const HooksUseReducer = () => {
         <h1>useReducer inserindo na lista</h1>
         <p>Lista de atividade:</p>
         <div>
+        <ul>
         {tasks.map((t)=>
-        <ul><li key={t.id} onDoubleClick={()=> removeTask(t.id)}>{t.text}</li></ul>
-        )}
+        <li key={t.id} onDoubleClick={()=> removeTask(t.id)}>{t.text}</li>
+        )}</ul>
         </div>        
         <form onSubmit={handleChangeTask}>
             <input value={taskCont} type="text" onChange={(e)=> setTaskCont(e.target.value)}/>
